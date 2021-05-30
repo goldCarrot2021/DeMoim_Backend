@@ -90,7 +90,11 @@ https://github.com/holasim91/demoim_fe
 * paging되어있는 경우 join fetch이 적용되지않는 다는 문제를 발견 -> @Entity Graph를 통해 n+1 문제 해결
 ![image](https://user-images.githubusercontent.com/78028746/120094693-e5b61700-c15c-11eb-8e3e-3ba2ec694117.png)
 
-### 향후 보완 계획
+
+<br>
+<br>
+
+## 향후 보완 계획
 
 * 웹사이트 보안 강화
   * SSL 활용한 HTTPS 변경 -> 2021.05.27( 담당: 정석진)
