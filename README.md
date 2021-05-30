@@ -82,6 +82,7 @@ https://github.com/holasim91/demoim_fe
 ### CoolSms 발송 api를 통한 인증 번호 조회
 * 알리고, NHN Cloud 서비스 후 coolSms 선택 
 * 선택 사유 : 많이 사용하는 서비스이다보니 관련 레퍼런스가 많아 트러블 슈팅이 용이, 토스& 한국투자 증권등의 기업에서도 사용할정도의 안전성
+  
 ![image](https://user-images.githubusercontent.com/78028746/120095121-14cd8800-c15f-11eb-8e3b-f8c71a55099f.png)
 
 ### @Entity Graph를 이용해 n+1문제 해결
