@@ -93,6 +93,9 @@ https://github.com/holasim91/demoim_fe
 
 ![image](https://user-images.githubusercontent.com/78028746/120095121-14cd8800-c15f-11eb-8e3b-f8c71a55099f.png)
 
+<br>
+
+
 ### 문제 발생 
 
 * CoolSms를 사용하여 문자인증을 구현.
