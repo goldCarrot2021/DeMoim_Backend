@@ -89,6 +89,7 @@ https://github.com/holasim91/demoim_fe
 ### n+1상황에서 join fetch가 작동하지않는 문제 
 * join fetch를 통해 n+1 문제를 해결하고자했지만 n+1 문제해결 시도.
 * paging되어있는 경우 join fetch이 적용되지않는 다는 문제를 발견 -> @Entity Graph를 통해 n+1 문제 해결
+
 ![image](https://user-images.githubusercontent.com/78028746/120094693-e5b61700-c15c-11eb-8e3e-3ba2ec694117.png)
 
 
