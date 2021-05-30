@@ -87,6 +87,10 @@ https://github.com/holasim91/demoim_fe
 ![image](https://user-images.githubusercontent.com/78028746/120095121-14cd8800-c15f-11eb-8e3b-f8c71a55099f.png)
 
 
+
+<br>
+<br>
+
 ## 트러블 슈팅
 
 ### n+1상황에서 join fetch가 작동하지않는 문제 
