@@ -69,16 +69,6 @@ https://github.com/holasim91/demoim_fe
 
 <br>
 
-## 기술소개
-
-### Quill 에디터를 사용해 s3에 이미지 업로드 
-
-* Quill-Editor은 가볍고 커스터마이징하기에 용이
-* 에디터에 이미지를 첨부하는 경우 s3 업로드 api에 요청을 보내 s3_url을 리턴받아 <mg src=""/>형태로 만들어줌.
-* ![image](https://user-images.githubusercontent.com/78028746/119853471-31917200-bf4b-11eb-9536-e670e32a1cb1.png)
-
-<br>
-<br>
 
 
 ## 트러블 슈팅
