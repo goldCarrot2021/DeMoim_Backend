@@ -15,7 +15,7 @@
 
 ![image](https://user-images.githubusercontent.com/78028746/121785601-a7593700-cbf5-11eb-8406-009f18524c06.png)
 
-
+<br>
 
 🎉 [사이트 주소] [https://demoim.co.kr/]
 
@@ -23,10 +23,7 @@
 
 🧑 [팀원 소개] [https://www.notion.so/Demoim-87856b49c18545358ee657b434bff365]
 
-<br>
-
-## DeMoim Frontend 
-https://github.com/holasim91/demoim_fe
+ 💻 [Frontend Repository] [https://github.com/holasim91/demoim_fe]
 
 <br>
 
