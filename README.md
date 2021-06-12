@@ -10,6 +10,8 @@
 - 그외에도 자신이 작업한 프로젝트에 대한 정보를 공유
 - 지원과 지원취소 기능을 통해 간편하게 지원가능
 
+<br>
+
 ![image](https://user-images.githubusercontent.com/78028746/121785601-a7593700-cbf5-11eb-8406-009f18524c06.png)
 
 <br>
