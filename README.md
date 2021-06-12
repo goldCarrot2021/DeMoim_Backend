@@ -260,7 +260,7 @@ https://github.com/holasim91/demoim_fe
 <br>
 
 
-### 최종 성과 
+## 최종 성과 
 
 * 작은 숫자라고 할수있지만 실제로 사용자를 런칭하고 피드백을 받아보는  목표를 실제로 이루워낸 경험입니다. 제가 개발한 사이트를 실제로 사용해주시는 분들이 있다는 점에서 뿌듯함을 느꼈던 프로젝트입니다.
 
@@ -271,8 +271,9 @@ https://github.com/holasim91/demoim_fe
 ![image](https://user-images.githubusercontent.com/78028746/121783238-6dcdff00-cbe8-11eb-9f34-2abfa34a9e0b.png)
 
 <br>
+<br>
 
-### 실제 사이트에 올라온 사용자 게시글
+## 실제 사이트에 올라온 사용자 게시글
 
 ![image](https://user-images.githubusercontent.com/78028746/121785373-74fb0a00-cbf4-11eb-8e79-d7c237ac3171.png)
 ![image](https://user-images.githubusercontent.com/78028746/121785380-7cbaae80-cbf4-11eb-91d6-7f59deadca97.png)
