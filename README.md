@@ -204,13 +204,13 @@ https://github.com/holasim91/demoim_fe
 
 ### 1. n+1상황에서 join fetch가 작동하지않는 문제 
 
-#### 문제 발생
+* 문제 발생
 
-* join fetch를 통해 n+1 문제를 해결하고자했지만 n+1 문제해결 시도.
+ + join fetch를 통해 n+1 문제를 해결하고자했지만 n+1 문제해결 시도.
 
-#### 문제 해결
+* 문제 해결
 
-* paging되어있는 경우 join fetch이 적용되지않는 다는 문제를 발견 -> @Entity Graph를 통해 n+1 문제 해결
+ + paging되어있는 경우 join fetch이 적용되지않는 다는 문제를 발견 -> @Entity Graph를 통해 n+1 문제 해결
 
 ![image](https://user-images.githubusercontent.com/78028746/120094693-e5b61700-c15c-11eb-8e3e-3ba2ec694117.png)
 
@@ -221,20 +221,12 @@ https://github.com/holasim91/demoim_fe
 ![image](https://user-images.githubusercontent.com/78028746/120095121-14cd8800-c15f-11eb-8e3b-f8c71a55099f.png)
 
 
-#### 문제 발생 
+* 문제 발생 
 
-* CoolSms를 사용하여 문자인증을 구현.
+ - 코드가 작동하는데 문자를 받지못하는 피드백 발생.
+ - 사업자등록을 하지않아 안심번호로 문자를 발송하고있었는데 **통신사의 설정에 따라 안심번호로 오는 문자가 거부되는 상황이 발생**
 
-    → Coolsms를 선택한 이유 
-
-    :토스,한국투자증권같은 기업에서도 사용할 만큼의 안정성
-
-     많은 사람들이 사용하는 만큼 레퍼런스가 풍부 → 트러블 슈팅에 용이
-
-* 코드가 작동하는데 문자를 받지못하는 피드백을 받았습니다. 
-* 사업자등록을 하지않아 안심번호로 문자를 발송하고있었는데 **통신사의 설정에 따라 안심번호로 오는 문자가 거부되는 상황이 발생**
-
-### 해결 방법 
+* 해결 방법 
 
 - 010으로 시작하는 번호로 문자 발송 → 문자가 문제없이 발송됨을 확인
 
@@ -242,13 +234,49 @@ https://github.com/holasim91/demoim_fe
 
     **개발자가 개발만 잘하면 되는 게 아니라 기획적인 요소 , 외부적인 요인 까지 고려해야한다는 배움**을 얻었습니다.
     
+<br>
+
+### 3. 테스트 코드 작성시 authentication을 파라미터로 받아오지못하는 문제.
+
+* 문제 발생 
+ + 파라미터로 authetication을 받아오지못하는 controller의 테스트 작성 중 authentication을 받아오지못하는 문제 발생했습니다.
+ 
+ ```java 
+ @PostMapping("/api/exhibition")
+    public ExhibitionResponseDto createExhibition(Authentication authentication,
+																									 @RequestPart(value = "requestBody") String requestBody, 
+																									@RequestPart MultipartFile file) {
+        return exhibitionService.createExhibition(authentication,requestBody,file);
+    }
+ ```
+ * 문제 해결
+  + MockCustomUser를 통해 ROLE_USER에 대한 권한 문제는 해결 했지만 authentication을 받아오지 못함
+  + 강제로 authentcation을 만들어주는 방법을 시도 → 성공했지만 authenticatino을 실제로 만들어서 불필요한 비용을 발생시킨다는 점 테스트 코드에 적합하지않다고 판단
+  + mock을 이용해 authentication 클래스를 생성해서 테스트 코드를 작성했습니다.
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cf1f7613-e46c-40e5-962f-6a12e06138bf/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cf1f7613-e46c-40e5-962f-6a12e06138bf/Untitled.png)
 
 <br>
 <br>
+
 
 ### 최종 성과 
+
+* 작은 숫자라고 할수있지만 실제로 사용자를 런칭하고 피드백을 받아보는  목표를 실제로 이루워낸 경험입니다. 제가 개발한 사이트를 실제로 사용해주시는 분들이 있다는 점에서 뿌듯함을 느꼈던 프로젝트입니다.
 
 ![image](https://user-images.githubusercontent.com/78028746/121783784-93a8d300-cbeb-11eb-90a9-0b533c934283.png)
 
 ![image](https://user-images.githubusercontent.com/78028746/121783238-6dcdff00-cbe8-11eb-9f34-2abfa34a9e0b.png)
 
+
+### 실제 사이트에 올라온 사용자 게시글
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/661c2686-9fc4-4ba8-ac27-8dc1670c2e3f/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/661c2686-9fc4-4ba8-ac27-8dc1670c2e3f/Untitled.png)
+
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cba068fe-1f6f-4557-a131-00bdce044b98/.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cba068fe-1f6f-4557-a131-00bdce044b98/.png)
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/67ca8c49-f360-4681-a782-bced07ae711e/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/67ca8c49-f360-4681-a782-bced07ae711e/Untitled.png)
+
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/566ff0d3-05d0-4a26-a2c2-d82c30c6ad3b/_.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/566ff0d3-05d0-4a26-a2c2-d82c30c6ad3b/_.png)
