@@ -206,11 +206,11 @@ https://github.com/holasim91/demoim_fe
 
 * 문제 발생
 
- + join fetch를 통해 n+1 문제를 해결하고자했지만 n+1 문제해결 시도.
+     + join fetch를 통해 n+1 문제를 해결하고자했지만 n+1 문제해결 시도.
 
 * 문제 해결
 
- + paging되어있는 경우 join fetch이 적용되지않는 다는 문제를 발견 -> @Entity Graph를 통해 n+1 문제 해결
+     + paging되어있는 경우 join fetch이 적용되지않는 다는 문제를 발견 -> @Entity Graph를 통해 n+1 문제 해결
 
 ![image](https://user-images.githubusercontent.com/78028746/120094693-e5b61700-c15c-11eb-8e3e-3ba2ec694117.png)
 
@@ -223,13 +223,13 @@ https://github.com/holasim91/demoim_fe
 
 * 문제 발생 
 
-+ 코드가 작동하는데 문자를 받지못하는 피드백 발생.
-+ 사업자등록을 하지않아 안심번호로 문자를 발송하고있었는데 **통신사의 설정에 따라 안심번호로 오는 문자가 거부되는 상황이 발생**
+     + 코드가 작동하는데 문자를 받지못하는 피드백 발생.
+     + 사업자등록을 하지않아 안심번호로 문자를 발송하고있었는데 **통신사의 설정에 따라 안심번호로 오는 문자가 거부되는 상황이 발생**
 
 * 해결 방법 
 
-+ 010으로 시작하는 번호로 문자 발송 → 문자가 문제없이 발송됨을 확인
-+ 코드를 제대로 구현해도 외부적인 요인으로 인해 사용자에게 불편함을 줄 수 있다는 것, **개발자가 개발만 잘하면 되는 게 아니라 기획적인 요소 , 외부적인 요인 까지 고려해야한다는 배움**을 얻었습니다.
+     + 010으로 시작하는 번호로 문자 발송 → 문자가 문제없이 발송됨을 확인
+     + 코드를 제대로 구현해도 외부적인 요인으로 인해 사용자에게 불편함을 줄 수 있다는 것, **개발자가 개발만 잘하면 되는 게 아니라 기획적인 요소 , 외부적인 요인 까지 고려해야한다는 배움**을 얻었습니다.
     
 <br>
 
@@ -237,7 +237,7 @@ https://github.com/holasim91/demoim_fe
 
 * 문제 발생 
 
-+ 파라미터로 authetication을 받아오지못하는 controller의 테스트 작성 중 authentication을 받아오지못하는 문제 발생했습니다.
+     + 파라미터로 authetication을 받아오지못하는 controller의 테스트 작성 중 authentication을 받아오지못하는 문제 발생했습니다.
  
  ```java 
  @PostMapping("/api/exhibition")
@@ -249,9 +249,9 @@ https://github.com/holasim91/demoim_fe
  ```
  * 문제 해결
  
-  + MockCustomUser를 통해 ROLE_USER에 대한 권한 문제는 해결 했지만 authentication을 받아오지 못함
-  + 강제로 authentcation을 만들어주는 방법을 시도 → 성공했지만 authenticatino을 실제로 만들어서 불필요한 비용을 발생시킨다는 점 테스트 코드에 적합하지않다고 판단
-  + mock을 이용해 authentication 클래스를 생성해서 테스트 코드를 작성했습니다.
+     + MockCustomUser를 통해 ROLE_USER에 대한 권한 문제는 해결 했지만 authentication을 받아오지 못함
+     + 강제로 authentcation을 만들어주는 방법을 시도 → 성공했지만 authenticatino을 실제로 만들어서 불필요한 비용을 발생시킨다는 점 테스트 코드에 적합하지않다고 판단
+     + mock을 이용해 authentication 클래스를 생성해서 테스트 코드를 작성했습니다.
 
 ![image](https://user-images.githubusercontent.com/78028746/121785366-6b71a200-cbf4-11eb-990e-3c80ab2640df.png)
 
