@@ -27,21 +27,6 @@
 
 <br>
 
-## 목차
-### 1. 개요
-### 2. 프로젝트 주요 기능
-### 3. 페이지별 기능 소개
-  * 문자인증
-  * Signup
-  * Home Page
-  * Detail Page
-  * Product Registration Page
-  * Mypage + MyStore
-  * Chatting
-### 4. 트러블 슈팅
-### 5. 고객 반응 및 개선 사항
-### 6. 기타
-
 
 
 ## 개요
