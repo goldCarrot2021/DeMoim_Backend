@@ -69,11 +69,11 @@ https://github.com/holasim91/demoim_fe
 
 <br>
 
-## 구현 기능 별 소개 
-
-### 문자인증
+## 기능 소개 
 
 <br>
+
+### 문자인증
 
 * 기존의 인증 시스템은 사업자 등록이 필요. -> 사용자가 입력한 전화번호로 인증 번호를 발송하고 해당 번호가 일치하는 지를 확인하는 방식으로 대체
 * coolsms 라이브러리를 이용한 문자 발송 
@@ -114,6 +114,41 @@ https://github.com/holasim91/demoim_fe
     }
 ```
 
+### 양방향 매핑
+* 테이블과 패러다임의 불일치를 해소하기위해서 객체가 서로를 참조 할 수있도록 양방향 .
+* LAZY 타입을 통해 불필요하게 참조되는 데이터 조회를 해결 -> 성능 이슈를 방지
+
+```java
+ @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "userId")
+    private User smallTalkUser;
+
+    @Builder
+    public SmallTalk(String contents) {
+        this.contents = contents;
+    }
+
+    public void setUser(User user){
+
+        //기존에 있던 smallTalk을 제거
+        if(this.smallTalkUser != null){
+            this.smallTalkUser.getSmallTalks().remove(this);
+        }
+        this.smallTalkUser = user;
+        smallTalkUser.getSmallTalks().add(this);
+    }
+```
+
+### S3를 이용한 이미지 업로드
+
+* Quill 에디터 사용 
+ + Quill 선택 이유 : ck 에디터, 토스트 등 다른 에디터와 비교하여 가볍고 커스터마이징하기에 용이
+* 클라이언트에서 요청이 올때마다 S3에서 이미지를 업로드후 S3_url을 반환
+
+
+
+<br>
+<br>
 
 ## 트러블 슈팅
 
