@@ -69,9 +69,7 @@ https://github.com/holasim91/demoim_fe
 
 <br>
 
-## 기능 소개 
-
-<br>
+## 주요 기능 소개 
 
 ### 문자인증
 
@@ -114,7 +112,9 @@ https://github.com/holasim91/demoim_fe
     }
 ```
 
-### 양방향 매핑
+<br>
+
+### 엔티티 설계시 양방향 매핑
 * 테이블과 패러다임의 불일치를 해소하기위해서 객체가 서로를 참조 할 수있도록 양방향 .
 * LAZY 타입을 통해 불필요하게 참조되는 데이터 조회를 해결 -> 성능 이슈를 방지
 
@@ -139,6 +139,8 @@ https://github.com/holasim91/demoim_fe
     }
 ```
 
+<br>
+
 ### S3를 이용한 이미지 업로드
 
 * Quill 에디터 사용 
@@ -146,6 +148,54 @@ https://github.com/holasim91/demoim_fe
 * 클라이언트에서 요청이 올때마다 S3에서 이미지를 업로드후 S3_url을 반환
 
 
+<br>
+
+### 테스트코드 작성 
+
+* mock을 이용해서 unit 테스트 작성.
+```java
+
+    @Test
+    public void 프로젝트자랑하기_등록() throws Exception {
+
+        //given
+        // 형식을 맞추주기위한 빈 객체 생성
+        User user = new User();
+        ExhibitionDto exhibitionDto = new ExhibitionDto();
+        ResponseUserDto responseUserDto = new ResponseUserDto();
+        ExhibitionResponseDto exhibitionResponseDto = new ExhibitionResponseDto();
+        MockMultipartFile file = new MockMultipartFile("file", "img.jpg", "/jpg,png", "data".getBytes(StandardCharsets.UTF_8));
+
+        Authentication authentication = mock(Authentication.class);
+
+        //when
+
+        // method의 input과 out 값을 지정해줌.
+        given(exhibitionService.createExhibition(authentication,exhibitionDto.toString(),file))
+                .willReturn(exhibitionResponseDto);
+
+        given(userService.findCurUser(authentication)).willReturn(java.util.Optional.of(user));
+
+        // then
+        mvc.perform(multipart("/api/exhibition")
+                .file("requestBody",exhibitionDto.toString().getBytes(StandardCharsets.UTF_8))
+                .file(file)
+                .param("authentication",new ObjectMapper().writeValueAsString(authentication)))
+                .andExpect(status().isOk())
+                .andDo(MockMvcResultHandlers.print());
+
+    }
+
+```
+<br>
+
+### 프로젝트 지원 및 팀원 선택 기능
+* Apply 테이블을 만들어 해당 프로젝트의 지원관련 데이터를 관리 
+* 리더인지 팀원인지 따로 권한을 줘서 설정하지않은 이유 
+ + 한 유저가 팀원이 될 수도 있고 리더가 될 수도 있기때문에 Spring Security의 권한을 이용하여 관리하기 복잡하다고 판단.
+ + 회의 결과 사실상 게시글의 작성자가 리더임으로 따로 권한을 줘서 불필요한 비용을 발생시킬 이유가 없다는 결론을 내림.
+ 
+ 
 
 <br>
 <br>
@@ -153,7 +203,13 @@ https://github.com/holasim91/demoim_fe
 ## 트러블 슈팅
 
 ### 1. n+1상황에서 join fetch가 작동하지않는 문제 
+
+#### 문제 발생
+
 * join fetch를 통해 n+1 문제를 해결하고자했지만 n+1 문제해결 시도.
+
+#### 문제 해결
+
 * paging되어있는 경우 join fetch이 적용되지않는 다는 문제를 발견 -> @Entity Graph를 통해 n+1 문제 해결
 
 ![image](https://user-images.githubusercontent.com/78028746/120094693-e5b61700-c15c-11eb-8e3e-3ba2ec694117.png)
@@ -165,7 +221,7 @@ https://github.com/holasim91/demoim_fe
 ![image](https://user-images.githubusercontent.com/78028746/120095121-14cd8800-c15f-11eb-8e3b-f8c71a55099f.png)
 
 
-### 문제 발생 
+#### 문제 발생 
 
 * CoolSms를 사용하여 문자인증을 구현.
 
