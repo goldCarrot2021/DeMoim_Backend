@@ -254,7 +254,7 @@ https://github.com/holasim91/demoim_fe
   + 강제로 authentcation을 만들어주는 방법을 시도 → 성공했지만 authenticatino을 실제로 만들어서 불필요한 비용을 발생시킨다는 점 테스트 코드에 적합하지않다고 판단
   + mock을 이용해 authentication 클래스를 생성해서 테스트 코드를 작성했습니다.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cf1f7613-e46c-40e5-962f-6a12e06138bf/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cf1f7613-e46c-40e5-962f-6a12e06138bf/Untitled.png)
+![image](https://user-images.githubusercontent.com/78028746/121785366-6b71a200-cbf4-11eb-990e-3c80ab2640df.png)
 
 <br>
 <br>
@@ -268,15 +268,15 @@ https://github.com/holasim91/demoim_fe
 
 ![image](https://user-images.githubusercontent.com/78028746/121783238-6dcdff00-cbe8-11eb-9f34-2abfa34a9e0b.png)
 
+<br>
 
 ### 실제 사이트에 올라온 사용자 게시글
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/661c2686-9fc4-4ba8-ac27-8dc1670c2e3f/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/661c2686-9fc4-4ba8-ac27-8dc1670c2e3f/Untitled.png)
+![image](https://user-images.githubusercontent.com/78028746/121785373-74fb0a00-cbf4-11eb-8e79-d7c237ac3171.png)
+![image](https://user-images.githubusercontent.com/78028746/121785380-7cbaae80-cbf4-11eb-91d6-7f59deadca97.png)
+![image](https://user-images.githubusercontent.com/78028746/121785386-83e1bc80-cbf4-11eb-8999-614cba71e9cb.png)
+![image](https://user-images.githubusercontent.com/78028746/121785393-87754380-cbf4-11eb-95f0-ade27b7436a5.png)
 
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cba068fe-1f6f-4557-a131-00bdce044b98/.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cba068fe-1f6f-4557-a131-00bdce044b98/.png)
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/67ca8c49-f360-4681-a782-bced07ae711e/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/67ca8c49-f360-4681-a782-bced07ae711e/Untitled.png)
 
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/566ff0d3-05d0-4a26-a2c2-d82c30c6ad3b/_.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/566ff0d3-05d0-4a26-a2c2-d82c30c6ad3b/_.png)
