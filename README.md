@@ -42,7 +42,7 @@ https://github.com/holasim91/demoim_fe
   * 정석진
     + 구현  테이블 설계
     + 회원가입 및 로그인,알림,마이페이지,지원,댓글 api구현
-    + 배포
+    + 배포(HTTPS)
 
 - 개발 환경 :: Springboot 2.4.5, jdk 1.8 , Spring data JPA , Spring security, Junit4
 
@@ -69,6 +69,52 @@ https://github.com/holasim91/demoim_fe
 
 <br>
 
+### 구현 기능 별 소개 
+
+###
+
+### 문자인증
+
+<br>
+
+* 기존의 인증 시스템은 사업자 등록이 필요. -> 사용자가 입력한 전화번호로 인증 번호를 발송하고 해당 번호가 일치하는 지를 확인하는 방식으로 대체
+* coolsms 라이브러리를 이용한 문자 발송 
+     → Coolsms를 선택한 이유 
+
+     + 토스,한국투자증권같은 기업에서도 사용할 만큼의 안정성
+ 
+      + 많은 사람들이 사용하는 만큼 레퍼런스가 풍부 → 트러블 슈팅에 용이
+
+
+```java
+ public void sendCertNumberSms(String phoneNum,String certNumber){
+
+        Message coolsms = new Message(CoolsmsProperties.api_key, CoolsmsProperties.api_secret);
+        HashMap<String, String> params = new HashMap<String, String>();
+
+        params.put("to",phoneNum );
+        params.put("from",CoolsmsProperties.fromNumber );
+        params.put("type", "SMS");
+        params.put("text", "[DeMoim]인증번호는"+certNumber+"입니다.");
+        params.put("app_version", "test app 1.2");
+
+        try {
+
+            JSONObject obj = (JSONObject) coolsms.send(params);
+            System.out.println(obj.toString());
+
+            //에러가 발생하면
+            if(obj.containsKey("error_list")){
+                throw new IllegalArgumentException("문자메세지가 발송되지못했습니다.");
+            }
+
+        } catch (
+                CoolsmsException e) {
+            throw new IllegalArgumentException("문자메세지가 발송되지못했습니다.");
+
+        }
+    }
+```
 
 
 ## 트러블 슈팅
@@ -111,11 +157,9 @@ https://github.com/holasim91/demoim_fe
 <br>
 <br>
 
-## 향후 보완 계획
+### 최종 성과 
 
-* 웹사이트 보안 강화
-  * SSL 활용한 HTTPS 변경 -> 2021.05.27( 담당: 정석진)
-* 실시간 알림 및 채팅 서비스
-  * Redis Pub/Sub 활용한 WebSocket 통신 또는 외부 API(채널톡) 도입 검토
-* 소셜로그인
-  * 카카오, 네이버 소셜로그인(OAuth2)\
+![image](https://user-images.githubusercontent.com/78028746/121783784-93a8d300-cbeb-11eb-90a9-0b533c934283.png)
+
+![image](https://user-images.githubusercontent.com/78028746/121783238-6dcdff00-cbe8-11eb-9f34-2abfa34a9e0b.png)
+
