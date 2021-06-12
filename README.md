@@ -8,12 +8,35 @@
 - 그외에도 자신이 작업한 프로젝트에 대한 정보를 공유
 - 지원과 지원취소 기능을 통해 간편하게 지원가능
 
+![image](https://user-images.githubusercontent.com/78028746/121785601-a7593700-cbf5-11eb-8406-009f18524c06.png)
+
+🎉 [사이트 주소] [https://demoim.co.kr/]
+🎬 [시연 영상] [https://www.youtube.com/watch?v=8u1KISOf3OU]
+🧑 [팀원 소개] [https://www.notion.so/Demoim-87856b49c18545358ee657b434bff365]
+
 <br>
 
 ## DeMoim Frontend 
 https://github.com/holasim91/demoim_fe
 
 <br>
+
+## 목차
+### 1. 개요
+### 2. 프로젝트 주요 기능
+### 3. 페이지별 기능 소개
+  * 문자인증
+  * Signup
+  * Home Page
+  * Detail Page
+  * Product Registration Page
+  * Mypage + MyStore
+  * Chatting
+### 4. 트러블 슈팅
+### 5. 고객 반응 및 개선 사항
+### 6. 기타
+
+
 
 ## 개요
 
@@ -71,7 +94,7 @@ https://github.com/holasim91/demoim_fe
 
 ## 주요 기능 소개 
 
-### 문자인증
+### `문자인증`
 
 * 기존의 인증 시스템은 사업자 등록이 필요. -> 사용자가 입력한 전화번호로 인증 번호를 발송하고 해당 번호가 일치하는 지를 확인하는 방식으로 대체
 * coolsms 라이브러리를 이용한 문자 발송 
@@ -114,7 +137,7 @@ https://github.com/holasim91/demoim_fe
 
 <br>
 
-### 엔티티 설계시 양방향 매핑
+### `엔티티 설계시 양방향 매핑`
 * 테이블과 패러다임의 불일치를 해소하기위해서 객체가 서로를 참조 할 수있도록 양방향 .
 * LAZY 타입을 통해 불필요하게 참조되는 데이터 조회를 해결 -> 성능 이슈를 방지
 
@@ -141,7 +164,7 @@ https://github.com/holasim91/demoim_fe
 
 <br>
 
-### S3를 이용한 이미지 업로드
+### `S3를 이용한 이미지 업로드`
 
 * Quill 에디터 사용 
  + Quill 선택 이유 : ck 에디터, 토스트 등 다른 에디터와 비교하여 가볍고 커스터마이징하기에 용이
@@ -150,7 +173,7 @@ https://github.com/holasim91/demoim_fe
 
 <br>
 
-### 테스트코드 작성 
+### `테스트코드 작성`
 
 * mock을 이용해서 unit 테스트 작성.
 ```java
