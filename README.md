@@ -264,7 +264,9 @@ https://github.com/holasim91/demoim_fe
 
 * 작은 숫자라고 할수있지만 실제로 사용자를 런칭하고 피드백을 받아보는  목표를 실제로 이루워낸 경험입니다. 제가 개발한 사이트를 실제로 사용해주시는 분들이 있다는 점에서 뿌듯함을 느꼈던 프로젝트입니다.
 
-![image](https://user-images.githubusercontent.com/78028746/121783784-93a8d300-cbeb-11eb-90a9-0b533c934283.png)
+
+![image](https://user-images.githubusercontent.com/78028746/121785420-ab388980-cbf4-11eb-98e8-0a2f4935797c.png)
+
 
 ![image](https://user-images.githubusercontent.com/78028746/121783238-6dcdff00-cbe8-11eb-9f34-2abfa34a9e0b.png)
 
